@@ -90,7 +90,13 @@ local plugins = {
         config = function ()
             require'alpha'.setup(require'alpha.themes.startify'.config)
         end
-    }
+    },
+
+
+    {
+        "lewis6991/gitsigns.nvim",
+    },
+
 }
 
 return plugins
