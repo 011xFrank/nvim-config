@@ -1,9 +1,11 @@
 local plugins = {
+	{ "lewis6991/gitsigns.nvim", },
+
     { "nvim-tree/nvim-web-devicons" },
 
     { 'numToStr/Comment.nvim', lazy = false, },
 
-	{ "rose-pine/neovim", name = "rose-pine", lazy = false },
+    { "rose-pine/neovim", name = "rose-pine", lazy = false },
 
     { "williamboman/mason.nvim", dependencies = { "williamboman/mason-lspconfig.nvim", } },
 
@@ -13,7 +15,6 @@ local plugins = {
 			require("nvim-treesitter.install").update({ with_sync = true })()
 		end,
 	},
-
 
     {
         "nvim-tree/nvim-tree.lua",
@@ -52,7 +53,9 @@ local plugins = {
 
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
-            {"antosha417/nvim-lsp-file-operations",config = true}
+            {
+                "antosha417/nvim-lsp-file-operations",config = true
+            }
         }
     },
 
@@ -77,7 +80,6 @@ local plugins = {
         },
         config = function(_, opts)
             require("nvim-autopairs").setup(opts)
-
             -- setup cmp for autopairs
             local cmp_autopairs = require "nvim-autopairs.completion.cmp"
             require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
@@ -91,12 +93,6 @@ local plugins = {
             require'alpha'.setup(require'alpha.themes.startify'.config)
         end
     },
-
-
-    {
-        "lewis6991/gitsigns.nvim",
-    },
-
 }
 
 return plugins

@@ -1,5 +1,3 @@
-vim.opt.updatetime = 200
-
 require("barbecue").setup({
     exclude_filetypes = { "NvimTree" },
     theme = {
