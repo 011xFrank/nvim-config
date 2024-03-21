@@ -1,4 +1,6 @@
-require("telescope").setup {
+local telescope = require("telescope")
+
+telescope.setup {
     defaults = {
         vimgrep_arguments = {
             "rg",
@@ -50,7 +52,6 @@ require("telescope").setup {
 
     extensions_list = { "themes", "terms" },
 }
-
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})

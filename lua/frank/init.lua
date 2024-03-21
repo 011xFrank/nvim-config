@@ -1,2 +1,2 @@
 require("frank.core")
-require("frank.plugins")
+require("frank.plugins.lazy")

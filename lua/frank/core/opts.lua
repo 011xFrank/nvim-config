@@ -8,6 +8,8 @@
 
 local opt = vim.opt
 
+opt.background = "dark"
+
 opt.updatetime = 200
 
 opt.scrolloff = 15

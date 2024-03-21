@@ -13,10 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 local options = {
     ui = {
-        border = "rounded"
+        border = "double"
     }
 }
 
-local plugins = require("frank.plugins.plugins")
+local plugins = require("frank.plugins.plugins_list")
 
 require("lazy").setup(plugins,options)
