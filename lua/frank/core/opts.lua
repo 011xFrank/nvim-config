@@ -13,7 +13,7 @@ opt.background = "dark"
 opt.updatetime = 200
 
 opt.scrolloff = 15
-opt.sidescrolloff = 15
+opt.sidescrolloff = 5
 
 opt.wrap = false
 
@@ -39,9 +39,6 @@ opt.mouse = "a"
 opt.relativenumber = true
 opt.numberwidth = 2
 opt.ruler = false
-
--- disable nvim intro
-opt.shortmess:append "sI"
 
 opt.signcolumn = "yes"
 opt.splitbelow = true

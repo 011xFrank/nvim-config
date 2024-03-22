@@ -11,10 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local options = {
-    ui = { border = "double" }
-}
 
-local plugins = require("frank.plugins.plugins_list")
+
+local options = { ui = { border = "double" } }
+
+local plugins = require("frank.plugins.list")
+
+
 
 require("lazy").setup(plugins,options)
