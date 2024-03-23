@@ -8,7 +8,11 @@
 
 local opt = vim.opt
 
+opt.fileencoding = "utf-8"
+
 opt.background = "dark"
+
+opt.hlsearch = false
 
 opt.updatetime = 200
 
@@ -36,6 +40,7 @@ opt.smartcase = true
 opt.mouse = "a"
 
 -- Numbers
+opt.number = true
 opt.relativenumber = true
 opt.numberwidth = 2
 opt.ruler = false
