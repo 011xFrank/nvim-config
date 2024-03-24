@@ -11,7 +11,7 @@ require("rose-pine").setup({
     },
 
     styles = {
-        bold = false,
+        bold = true,
         italic = false,
         transparency = true,
     },
