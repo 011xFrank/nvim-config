@@ -11,13 +11,13 @@ require("rose-pine").setup({
     },
 
     styles = {
-        bold = true,
+        bold = false,
         italic = false,
         transparency = true,
     },
 
     groups = {
-        border = "muted",
+        border = "surface",
         link = "iris",
         panel = "surface",
 
