@@ -1,6 +1,8 @@
 local plugins = {
 	{ "lewis6991/gitsigns.nvim", },
 
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}, dependencies = 'tpope/vim-sleuth'},
+
     { "nvim-tree/nvim-web-devicons" },
 
     { "numToStr/Comment.nvim", lazy = false, },
