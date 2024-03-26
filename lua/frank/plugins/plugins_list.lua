@@ -1,7 +1,5 @@
 local plugins = {
-	{ "lewis6991/gitsigns.nvim", },
-
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}, dependencies = 'tpope/vim-sleuth'},
+    { "lewis6991/gitsigns.nvim", },
 
     { "nvim-tree/nvim-web-devicons" },
 
@@ -11,7 +9,9 @@ local plugins = {
 
     { "williamboman/mason.nvim", dependencies = { "williamboman/mason-lspconfig.nvim", } },
 
-	{ "nvim-treesitter/nvim-treesitter", build = function() require("nvim-treesitter.install").update({ with_sync = true })() end, },
+    { "nvim-treesitter/nvim-treesitter", build = function() require("nvim-treesitter.install").update({ with_sync = true })() end, },
+
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}, dependencies = 'tpope/vim-sleuth'},
 
     {
         "kylechui/nvim-surround",

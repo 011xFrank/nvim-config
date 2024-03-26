@@ -6,6 +6,6 @@ require("ibl").setup({
         enabled = false
     },
     exclude = {
-        -- filetypes = { 'c','cpp' },
+        filetypes = { 'c','cpp' },
     },
 })
