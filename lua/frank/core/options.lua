@@ -2,25 +2,27 @@ local opt = vim.opt
 
 opt.fileencoding = "utf-8"
 opt.background = "dark"
-opt.hlsearch = false
-opt.updatetime = 200
-opt.scrolloff = 15
-opt.sidescrolloff = 5
-opt.wrap = false
-opt.laststatus = 3 -- global statusline
-opt.showmode = false
 opt.clipboard = "unnamedplus"
-opt.cursorline = false
 opt.fillchars = { eob = " " }
-opt.ignorecase = true
-opt.smartcase = true
 opt.mouse = "a"
 opt.signcolumn = "yes"
+
+opt.hlsearch = false
+opt.wrap = false
+opt.showmode = false
+opt.cursorline = false
+opt.ignorecase = true
+opt.smartcase = true
 opt.splitbelow = true
 opt.splitright = true
 opt.termguicolors = true
-opt.timeoutlen = 400
 opt.undofile = true
+
+opt.updatetime = 200
+opt.scrolloff = 15
+opt.sidescrolloff = 5
+opt.laststatus = 3
+opt.timeoutlen = 400
 
 -- Indenting
 opt.expandtab = true
