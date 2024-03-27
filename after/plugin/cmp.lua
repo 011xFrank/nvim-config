@@ -1,6 +1,12 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
+luasnip.setup {
+    history = true,
+    region_check_events = "InsertEnter",
+    delete_check_events = "TextChanged,InsertLeave",
+}
+
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
