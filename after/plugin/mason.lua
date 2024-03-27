@@ -1,12 +1,12 @@
 local mason = require("mason")
-
 local mason_lspconfig = require("mason-lspconfig")
 
 mason.setup({
     ui = {
+        border = "double",
         icons = {
-            package_pending = " ",
-            package_installed = "󰄳 ",
+            package_pending = "󰝦",
+            package_installed = "󰄳",
             package_uninstalled = " 󰚌",
         },
 
@@ -32,5 +32,5 @@ mason_lspconfig.setup ({
 
     max_concurrent_installers = 10,
 
-    automatic_installation = true,
+    automatic_installation = false,
 })

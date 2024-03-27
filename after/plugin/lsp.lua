@@ -1,11 +1,6 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
-
-local lspconfig = require("lspconfig")
-local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
-
 local on_attach = function(client, bufnr)
     opts.buffer = bufnr
 
@@ -28,40 +23,58 @@ local on_attach = function(client, bufnr)
     keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 end
 
-
-local capabilities = cmp_nvim_lsp.default_capabilities()
-
+----------------------------------------------------------------------------------
 
 local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-
 
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
+----------------------------------------------------------------------------------
+
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
+local capabilities = cmp_nvim_lsp.default_capabilities()
+local lspconfig = require("lspconfig")
 
 lspconfig["clangd"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
 })
 
-
 lspconfig["lua_ls"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
     settings = { -- custom settings for lua
-    Lua = {
-        -- make the language server recognize "vim" global
-        diagnostics = {
-            globals = { "vim" },
-        },
-        workspace = {
-            -- make language server aware of runtime files
-            library = {
-                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                [vim.fn.stdpath("config") .. "/lua"] = true,
+        Lua = {
+            -- make the language server recognize "vim" global
+            diagnostics = { globals = { "vim" }, },
+            workspace = {
+                -- make language server aware of runtime files
+                library = {
+                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                    [vim.fn.stdpath("config") .. "/lua"] = true,
+                },
             },
         },
     },
-},})
+})
+
+----------------------------------------------------------------------------------
+
+local border = "double"
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+    vim.lsp.handlers.hover, { border = border }
+)
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+    vim.lsp.handlers.signature_help, { border = border }
+)
+
+vim.diagnostic.config { float = { border=border } }
+
+require('lspconfig.ui.windows').default_options = { border = border }
+
+----------------------------------------------------------------------------------
